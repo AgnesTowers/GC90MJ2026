@@ -75,17 +75,23 @@ func analyse_state() -> void :
 func jump() -> void:
 	print_debug("jump!")
 	current_state = player_state.JUMP
-	velocity.y = -jump_velocity
+	if !is_in_mirror :
+		velocity.y = -jump_velocity
+	else : 
+		velocity.y = +jump_velocity
 	jump_cooldown_timer.start(jump_cd)
 
 func can_jump() -> bool :
-	if !jump_cooldown_timer.is_stopped() || !is_on_floor():
+	if !jump_cooldown_timer.is_stopped() || ((!is_on_floor() && !is_in_mirror)||(!is_on_ceiling() && is_in_mirror)):
 		return false
 	return true
 
 func swap() -> void:
 	print_debug("swap!")
-	is_in_mirror != is_in_mirror
+	is_in_mirror = !is_in_mirror
+	velocity *= 1.1
+	%PlayerAnim.flip_v = is_in_mirror
+	position.y = %SwapAxis.position.y - (position.y - %SwapAxis.position.y) 
 	pass
 
 func can_swap() -> bool:

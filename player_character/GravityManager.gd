@@ -16,6 +16,6 @@ func apply_gravity(delta: float) -> void:
 			if !body_to_affect.is_in_mirror : 
 				body_to_affect.velocity.y += gravity_strength*delta
 			else :
-				body_to_affect.y -= gravity_strength *delta
+				body_to_affect.velocity.y -= gravity_strength *delta
 		else :
-			body_to_affect.velocity.y -= gravity_strength *delta
+			body_to_affect.velocity.y += gravity_strength *delta

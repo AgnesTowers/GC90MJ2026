@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bss3a3ldtfai" path="res://player_character/player_character.tscn" id="1_ilwad"]
 [ext_resource type="Texture2D" uid="uid://qpln3krokgg5" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Hills_Mirrorable.png" id="2_jirdo"]
 [ext_resource type="Script" uid="uid://ch50gpsiugc3v" path="res://core/world_generation/tile_map_mirrorer.gd" id="3_bt44k"]
-[ext_resource type="Shader" uid="uid://bxvvarelsekkl" path="res://Assets/mirror_effect.gdshader" id="4_kx6l7"]
+[ext_resource type="Shader" path="res://Assets/mirror_effect.gdshader" id="4_kx6l7"]
 [ext_resource type="Script" uid="uid://cfli43m7thxek" path="res://effects/mirror_effect_color_rect.gd" id="5_n46q3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
@@ -50,7 +50,6 @@ tile_set = SubResource("TileSet_kx6l7")
 [node name="TileMapLayerMirror" type="Node" parent="." unique_id=683520418 node_paths=PackedStringArray("tile_map_layer")]
 script = ExtResource("3_bt44k")
 tile_map_layer = NodePath("../TileMapLayer")
-mirror_plane_y = null
 metadata/_custom_type_script = "uid://ch50gpsiugc3v"
 
 [node name="MirrorEffectColorRect" type="ColorRect" parent="." unique_id=296249942 node_paths=PackedStringArray("target")]
@@ -60,3 +59,6 @@ offset_right = 1711.0
 offset_bottom = 580.0
 script = ExtResource("5_n46q3")
 target = NodePath("../PlayerCharacter")
+
+[node name="SwapAxis" type="Node2D" parent="." unique_id=1978602836]
+unique_name_in_owner = true

@@ -89,7 +89,7 @@ unique_name_in_owner = true
 texture_filter = 3
 scale = Vector2(2.435, 2.435)
 sprite_frames = SubResource("SpriteFrames_qlps6")
-animation = &"3"
+animation = &"1"
 
 [node name="PlayerHurtbox" type="CollisionShape2D" parent="." unique_id=1025174676]
 unique_name_in_owner = true
