@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://6bkwp6uswm5h"]
+
+[ext_resource type="Texture2D" uid="uid://cle561q40e715" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="1_lq6m6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdsqf"]
+atlas = ExtResource("1_lq6m6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkpff"]
+atlas = ExtResource("1_lq6m6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmw2y"]
+atlas = ExtResource("1_lq6m6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tmiu"]
+atlas = ExtResource("1_lq6m6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37ej2"]
+atlas = ExtResource("1_lq6m6")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2a1p"]
+atlas = ExtResource("1_lq6m6")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhh6u"]
+atlas = ExtResource("1_lq6m6")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxxv4"]
+atlas = ExtResource("1_lq6m6")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8nqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdsqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkpff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmw2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tmiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37ej2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2a1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhh6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxxv4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lq6m6"]
+radius = 6.0
+
+[node name="EvilChicken" type="Node2D" unique_id=340335667]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=60959108]
+sprite_frames = SubResource("SpriteFrames_k8nqd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1538624858]
+position = Vector2(-1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=280162868]
+shape = SubResource("CircleShape2D_lq6m6")
