@@ -1,61 +1,108 @@
-[gd_scene format=4 uid="uid://cyfvcuxi210mg"]
+[gd_scene format=3 uid="uid://cyfvcuxi210mg"]
 
-[ext_resource type="PackedScene" uid="uid://bss3a3ldtfai" path="res://player_character/player_character.tscn" id="1_ilwad"]
-[ext_resource type="Texture2D" uid="uid://qpln3krokgg5" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Hills_Mirrorable.png" id="2_jirdo"]
-[ext_resource type="Script" uid="uid://ch50gpsiugc3v" path="res://core/world_generation/tile_map_mirrorer.gd" id="3_bt44k"]
-[ext_resource type="Shader" path="res://Assets/mirror_effect.gdshader" id="4_kx6l7"]
-[ext_resource type="Script" uid="uid://cfli43m7thxek" path="res://effects/mirror_effect_color_rect.gd" id="5_n46q3"]
+[ext_resource type="Script" uid="uid://bajou2gsh6dob" path="res://player_character/player_character.gd" id="1_n46q3"]
+[ext_resource type="Texture2D" uid="uid://c3bf2j3yn1vou" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_btoec"]
+[ext_resource type="Texture2D" uid="uid://b7jr78584ehx" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Actions.png" id="3_gwceb"]
+[ext_resource type="Script" uid="uid://duu1jltqfekup" path="res://player_character/AnimationManager.gd" id="4_l53as"]
+[ext_resource type="Script" uid="uid://og4v5a6vkptl" path="res://player_character/GravityManager.gd" id="5_3sk1a"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
-texture = ExtResource("2_jirdo")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l2xy"]
+atlas = ExtResource("2_btoec")
+region = Rect2(0, 144, 48, 48)
 
-[sub_resource type="TileSet" id="TileSet_kx6l7"]
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_jirdo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvxdu"]
+atlas = ExtResource("2_btoec")
+region = Rect2(96, 144, 48, 48)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n46q3"]
-shader = ExtResource("4_kx6l7")
-shader_parameter/scale = 120.0
-shader_parameter/gap = 4.5
-shader_parameter/angle = 45.0
-shader_parameter/glass_tint = Color(0.62, 0.8, 1, 0.15)
-shader_parameter/stripe_color = Color(1, 1, 1, 0.08)
-shader_parameter/sun_color = Color(1, 1, 1, 0.59)
-shader_parameter/dash_cell = 6.0
-shader_parameter/dash_density = 0.75
-shader_parameter/dash_size = 0.2
-shader_parameter/dashes_enabled = true
-shader_parameter/border_enabled = true
-shader_parameter/border_size = 1.0
-shader_parameter/border_dash_cell = 15.0
-shader_parameter/border_dash_density = 0.5
-shader_parameter/border_dash_size = 1.0
-shader_parameter/border_dashes_enabled = true
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f5wo"]
+atlas = ExtResource("2_btoec")
+region = Rect2(48, 144, 48, 48)
 
-[node name="Level1" type="Node2D" unique_id=1652336010]
+[sub_resource type="AtlasTexture" id="AtlasTexture_731wj"]
+atlas = ExtResource("2_btoec")
+region = Rect2(144, 144, 48, 48)
 
-[node name="PlayerCharacter" parent="." unique_id=965581527 instance=ExtResource("1_ilwad")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_adpv0"]
+atlas = ExtResource("2_btoec")
+region = Rect2(96, 144, 48, 48)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=987080990]
-tile_map_data = PackedByteArray("AAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAYAAQAAAAEAAAAIAAYAAQAAAAEAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAEAAAALAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAEAAAAOAAQAAQAAAAEAAAAOAAMAAQAAAAAAAAAPAAMAAQAAAAAAAAAQAAMAAQAAAAAAAAABAAYAAQAAAAEAAAACAAYAAQAAAAEAAAADAAYAAQAAAAEAAAAEAAYAAQAAAAEAAAAFAAYAAQAAAAEAAAAGAAYAAQAAAAEAAAAJAAYAAQAAAAEAAAAKAAYAAQAAAAEAAAALAAYAAQAAAAEAAAAMAAYAAQAAAAEAAAAMAAUAAQAAAAEAAAANAAYAAQAAAAEAAAAOAAYAAQAAAAEAAAAPAAYAAQAAAAEAAAAQAAYAAQAAAAEAAAARAAYAAQAAAAEAAAARAAMAAQAAAAAAAAASAAMAAQAAAAAAAAATAAMAAQAAAAEAAAAUAAMAAQAAAAEAAAAVAAMAAQAAAAEAAAAVAAQAAQAAAAEAAAAWAAQAAQAAAAEAAAAXAAQAAQAAAAEAAAAYAAQAAQAAAAEAAAAZAAQAAQAAAAAAAAAaAAQAAQAAAAAAAAAbAAUAAQAAAAAAAAAcAAUAAQAAAAAAAAAdAAUAAQAAAAAAAAAeAAQAAQAAAAAAAAAfAAQAAQAAAAAAAAAgAAQAAQAAAAAAAAAhAAQAAQAAAAAAAAAiAAQAAQAAAAAAAAAjAAQAAQAAAAAAAAAkAAQAAQAAAAAAAAAlAAQAAQAAAAAAAAAmAAQAAQAAAAAAAAAnAAQAAQAAAAAAAAAoAAQAAQAAAAAAAAApAAQAAQAAAAAAAAAqAAQAAQAAAAAAAAAqAAUAAQAAAAAAAAArAAUAAQAAAAAAAAAsAAUAAQAAAAAAAAAtAAUAAQAAAAAAAAAuAAUAAQAAAAAAAAAuAAYAAQAAAAEAAAAvAAYAAQAAAAEAAAASAAYAAQAAAAEAAAATAAYAAQAAAAEAAAAUAAYAAQAAAAEAAAAVAAYAAQAAAAEAAAAWAAYAAQAAAAEAAAAXAAYAAQAAAAEAAAAYAAYAAQAAAAEAAAAZAAYAAQAAAAEAAAAaAAYAAQAAAAEAAAAbAAYAAQAAAAEAAAAcAAYAAQAAAAEAAAAdAAYAAQAAAAEAAAAeAAYAAQAAAAEAAAAfAAYAAQAAAAEAAAAgAAYAAQAAAAEAAAAhAAYAAQAAAAEAAAAiAAYAAQAAAAEAAAAjAAYAAQAAAAEAAAAkAAYAAQAAAAEAAAAlAAYAAQAAAAEAAAAmAAYAAQAAAAEAAAAnAAYAAQAAAAEAAAAoAAYAAQAAAAEAAAApAAYAAQAAAAEAAAAqAAYAAQAAAAEAAAArAAYAAQAAAAEAAAAsAAYAAQAAAAEAAAAtAAYAAQAAAAEAAAANAAUAAQAAAAEAAAAOAAUAAQAAAAEAAAAPAAUAAQAAAAEAAAAQAAUAAQAAAAEAAAARAAUAAQAAAAEAAAASAAUAAQAAAAEAAAASAAQAAQAAAAEAAAARAAQAAQAAAAEAAAAQAAQAAQAAAAEAAAAPAAQAAQAAAAEAAAATAAQAAQAAAAEAAAATAAUAAQAAAAEAAAAUAAUAAQAAAAEAAAAUAAQAAQAAAAEAAAAVAAUAAQAAAAEAAAAWAAUAAQAAAAEAAAAXAAUAAQAAAAEAAAAYAAUAAQAAAAEAAAAZAAUAAQAAAAEAAAAaAAUAAQAAAAEAAAAgAAUAAQAAAAEAAAAfAAUAAQAAAAEAAAAeAAUAAQAAAAEAAAAhAAUAAQAAAAEAAAAiAAUAAQAAAAEAAAAjAAUAAQAAAAEAAAAkAAUAAQAAAAEAAAAlAAUAAQAAAAEAAAAmAAUAAQAAAAEAAAAnAAUAAQAAAAEAAAAoAAUAAQAAAAEAAAApAAUAAQAAAAEAAAANAAMAAQAAAAAAAAATAAIAAQAAAAAAAAAUAAIAAQAAAAAAAAAVAAIAAQAAAAAAAAAWAAIAAQAAAAAAAAAXAAMAAQAAAAAAAAAYAAMAAQAAAAAAAAAWAAMAAQAAAAEAAAA=")
-tile_set = SubResource("TileSet_kx6l7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4q7y"]
+atlas = ExtResource("3_gwceb")
+region = Rect2(0, 336, 48, 48)
 
-[node name="TileMapLayerMirror" type="Node" parent="." unique_id=683520418 node_paths=PackedStringArray("tile_map_layer")]
-script = ExtResource("3_bt44k")
-tile_map_layer = NodePath("../TileMapLayer")
-metadata/_custom_type_script = "uid://ch50gpsiugc3v"
+[sub_resource type="AtlasTexture" id="AtlasTexture_33jgw"]
+atlas = ExtResource("3_gwceb")
+region = Rect2(48, 336, 48, 48)
 
-[node name="MirrorEffectColorRect" type="ColorRect" parent="." unique_id=296249942 node_paths=PackedStringArray("target")]
-material = SubResource("ShaderMaterial_n46q3")
-offset_left = -482.0
-offset_top = 113.0
-offset_right = 1178.0
-offset_bottom = 693.0
-script = ExtResource("5_n46q3")
-target = NodePath("../PlayerCharacter")
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlps6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l2xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvxdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3f5wo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_731wj")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adpv0")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4q7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33jgw")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ty04"]
+radius = 23.537205
+
+[node name="PlayerCharacter" type="CharacterBody2D" unique_id=965581527]
+script = ExtResource("1_n46q3")
+
+[node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=372963159]
+unique_name_in_owner = true
+texture_filter = 3
+scale = Vector2(2.435, 2.435)
+sprite_frames = SubResource("SpriteFrames_qlps6")
+animation = &"3"
+
+[node name="PlayerHurtbox" type="CollisionShape2D" parent="." unique_id=1025174676]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_1ty04")
+
+[node name="PlayerCam" type="Camera2D" parent="." unique_id=758788686]
+unique_name_in_owner = true
+zoom = Vector2(1.805, 1.805)
+
+[node name="AnimationManager" type="Node2D" parent="." unique_id=562210158]
+script = ExtResource("4_l53as")
+metadata/_custom_type_script = "uid://duu1jltqfekup"
+
+[node name="GravityManager" type="Node2D" parent="." unique_id=352807087]
+script = ExtResource("5_3sk1a")
+metadata/_custom_type_script = "uid://og4v5a6vkptl"
