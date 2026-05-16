@@ -1,0 +1,60 @@
+[gd_scene format=4 uid="uid://cyfvcuxi210mg"]
+
+[ext_resource type="PackedScene" uid="uid://bss3a3ldtfai" path="res://player_character/player_character.tscn" id="1_ilwad"]
+[ext_resource type="Texture2D" uid="uid://qpln3krokgg5" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Hills_Mirrorable.png" id="2_jirdo"]
+[ext_resource type="Script" uid="uid://ch50gpsiugc3v" path="res://core/world_generation/tile_map_mirrorer.gd" id="3_bt44k"]
+[ext_resource type="Shader" uid="uid://bxvvarelsekkl" path="res://Assets/mirror_effect.gdshader" id="4_kx6l7"]
+[ext_resource type="Script" uid="uid://cfli43m7thxek" path="res://effects/mirror_effect_color_rect.gd" id="5_n46q3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
+texture = ExtResource("2_jirdo")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_kx6l7"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_jirdo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n46q3"]
+shader = ExtResource("4_kx6l7")
+shader_parameter/scale = 120.0
+shader_parameter/gap = 4.5
+shader_parameter/angle = 45.0
+shader_parameter/glass_tint = Color(0.62, 0.8, 1, 0.15)
+shader_parameter/stripe_color = Color(1, 1, 1, 0.08)
+shader_parameter/sun_color = Color(1, 1, 1, 0.59)
+shader_parameter/dash_cell = 6.0
+shader_parameter/dash_density = 0.75
+shader_parameter/dash_size = 0.2
+shader_parameter/dashes_enabled = true
+shader_parameter/border_enabled = true
+shader_parameter/border_size = 1.0
+shader_parameter/border_dash_cell = 15.0
+shader_parameter/border_dash_density = 0.5
+shader_parameter/border_dash_size = 1.0
+shader_parameter/border_dashes_enabled = true
+
+[node name="Level1" type="Node2D" unique_id=1652336010]
+
+[node name="PlayerCharacter" parent="." unique_id=965581527 instance=ExtResource("1_ilwad")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=987080990]
+tile_map_data = PackedByteArray("AAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAYAAQAAAAEAAAAIAAYAAQAAAAEAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAKAAUAAQAAAAAAAAALAAUAAQAAAAEAAAALAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAANAAQAAQAAAAEAAAAOAAQAAQAAAAEAAAAOAAMAAQAAAAAAAAAPAAMAAQAAAAAAAAAQAAMAAQAAAAAAAAABAAYAAQAAAAEAAAACAAYAAQAAAAEAAAADAAYAAQAAAAEAAAAEAAYAAQAAAAEAAAAFAAYAAQAAAAEAAAAGAAYAAQAAAAEAAAAJAAYAAQAAAAEAAAAKAAYAAQAAAAEAAAALAAYAAQAAAAEAAAAMAAYAAQAAAAEAAAAMAAUAAQAAAAEAAAANAAYAAQAAAAEAAAAOAAYAAQAAAAEAAAAPAAYAAQAAAAEAAAAQAAYAAQAAAAEAAAARAAYAAQAAAAEAAAARAAMAAQAAAAAAAAASAAMAAQAAAAAAAAATAAMAAQAAAAEAAAAUAAMAAQAAAAEAAAAVAAMAAQAAAAEAAAAVAAQAAQAAAAEAAAAWAAQAAQAAAAEAAAAXAAQAAQAAAAEAAAAYAAQAAQAAAAEAAAAZAAQAAQAAAAAAAAAaAAQAAQAAAAAAAAAbAAUAAQAAAAAAAAAcAAUAAQAAAAAAAAAdAAUAAQAAAAAAAAAeAAQAAQAAAAAAAAAfAAQAAQAAAAAAAAAgAAQAAQAAAAAAAAAhAAQAAQAAAAAAAAAiAAQAAQAAAAAAAAAjAAQAAQAAAAAAAAAkAAQAAQAAAAAAAAAlAAQAAQAAAAAAAAAmAAQAAQAAAAAAAAAnAAQAAQAAAAAAAAAoAAQAAQAAAAAAAAApAAQAAQAAAAAAAAAqAAQAAQAAAAAAAAAqAAUAAQAAAAAAAAArAAUAAQAAAAAAAAAsAAUAAQAAAAAAAAAtAAUAAQAAAAAAAAAuAAUAAQAAAAAAAAAuAAYAAQAAAAEAAAAvAAYAAQAAAAEAAAASAAYAAQAAAAEAAAATAAYAAQAAAAEAAAAUAAYAAQAAAAEAAAAVAAYAAQAAAAEAAAAWAAYAAQAAAAEAAAAXAAYAAQAAAAEAAAAYAAYAAQAAAAEAAAAZAAYAAQAAAAEAAAAaAAYAAQAAAAEAAAAbAAYAAQAAAAEAAAAcAAYAAQAAAAEAAAAdAAYAAQAAAAEAAAAeAAYAAQAAAAEAAAAfAAYAAQAAAAEAAAAgAAYAAQAAAAEAAAAhAAYAAQAAAAEAAAAiAAYAAQAAAAEAAAAjAAYAAQAAAAEAAAAkAAYAAQAAAAEAAAAlAAYAAQAAAAEAAAAmAAYAAQAAAAEAAAAnAAYAAQAAAAEAAAAoAAYAAQAAAAEAAAApAAYAAQAAAAEAAAAqAAYAAQAAAAEAAAArAAYAAQAAAAEAAAAsAAYAAQAAAAEAAAAtAAYAAQAAAAEAAAANAAUAAQAAAAEAAAAOAAUAAQAAAAEAAAAPAAUAAQAAAAEAAAAQAAUAAQAAAAEAAAARAAUAAQAAAAEAAAASAAUAAQAAAAEAAAASAAQAAQAAAAEAAAARAAQAAQAAAAEAAAAQAAQAAQAAAAEAAAAPAAQAAQAAAAEAAAATAAQAAQAAAAEAAAATAAUAAQAAAAEAAAAUAAUAAQAAAAEAAAAUAAQAAQAAAAEAAAAVAAUAAQAAAAEAAAAWAAUAAQAAAAEAAAAXAAUAAQAAAAEAAAAYAAUAAQAAAAEAAAAZAAUAAQAAAAEAAAAaAAUAAQAAAAEAAAAgAAUAAQAAAAEAAAAfAAUAAQAAAAEAAAAeAAUAAQAAAAEAAAAhAAUAAQAAAAEAAAAiAAUAAQAAAAEAAAAjAAUAAQAAAAEAAAAkAAUAAQAAAAEAAAAlAAUAAQAAAAEAAAAmAAUAAQAAAAEAAAAnAAUAAQAAAAEAAAAoAAUAAQAAAAEAAAApAAUAAQAAAAEAAAANAAMAAQAAAAAAAAATAAIAAQAAAAAAAAAUAAIAAQAAAAAAAAAVAAIAAQAAAAAAAAAWAAIAAQAAAAAAAAAXAAMAAQAAAAAAAAAYAAMAAQAAAAAAAAAWAAMAAQAAAAEAAAA=")
+tile_set = SubResource("TileSet_kx6l7")
+
+[node name="TileMapLayerMirror" type="Node" parent="." unique_id=683520418 node_paths=PackedStringArray("tile_map_layer")]
+script = ExtResource("3_bt44k")
+tile_map_layer = NodePath("../TileMapLayer")
+metadata/_custom_type_script = "uid://ch50gpsiugc3v"
+
+[node name="MirrorEffectColorRect" type="ColorRect" parent="." unique_id=296249942]
+material = SubResource("ShaderMaterial_n46q3")
+offset_left = -482.0
+offset_top = 113.0
+offset_right = 1178.0
+offset_bottom = 693.0
+script = ExtResource("5_n46q3")
