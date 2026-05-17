@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bajou2gsh6dob" path="res://player_character/player_character.gd" id="1_1ty04"]
 [ext_resource type="Texture2D" uid="uid://c3bf2j3yn1vou" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="2_1ty04"]
 [ext_resource type="Texture2D" uid="uid://b7jr78584ehx" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Actions.png" id="2_5l2xy"]
-[ext_resource type="Script" uid="uid://duu1jltqfekup" path="res://player_character/AnimationManager.gd" id="4_bvxdu"]
+[ext_resource type="Script" path="res://player_character/AnimationManager.gd" id="4_bvxdu"]
 [ext_resource type="Script" uid="uid://og4v5a6vkptl" path="res://player_character/GravityManager.gd" id="5_3f5wo"]
 [ext_resource type="Texture2D" uid="uid://b25veah8sx07t" path="res://Assets/round.png" id="6_731wj"]
 
@@ -103,7 +103,6 @@ zoom = Vector2(1.805, 1.805)
 
 [node name="AnimationManager" type="Node2D" parent="." unique_id=562210158]
 script = ExtResource("4_bvxdu")
-metadata/_custom_type_script = "uid://duu1jltqfekup"
 
 [node name="GravityManager" type="Node2D" parent="." unique_id=352807087]
 script = ExtResource("5_3f5wo")
