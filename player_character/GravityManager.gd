@@ -14,8 +14,8 @@ func apply_gravity(delta: float) -> void:
 	if !body_to_affect.is_on_floor() :
 		if body_to_affect is PlayerCharacter :
 			if !body_to_affect.is_in_mirror : 
-				body_to_affect.velocity.y += gravity_strength*delta
+				body_to_affect.velocity.y += gravity_strength*delta * body_to_affect.gravity_mult
 			else :
-				body_to_affect.velocity.y -= gravity_strength *delta
+				body_to_affect.velocity.y -= gravity_strength *delta * body_to_affect.gravity_mult
 		else :
-			body_to_affect.velocity.y += gravity_strength *delta
+			body_to_affect.velocity.y += gravity_strength *delta * body_to_affect.gravity_mult

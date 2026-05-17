@@ -83,6 +83,7 @@ radius = 23.537205
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=965581527]
 script = ExtResource("1_1ty04")
+jump_velocity = 100.0
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=372963159]
 unique_name_in_owner = true

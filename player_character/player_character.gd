@@ -16,6 +16,7 @@ enum player_state{
 @export var attack_cd : float = 1
 @export var swap_cd : float = 1
 @export var attack_duration : float = 0.5
+@export var gravity_mult : float = 4
 
 var current_state : player_state = player_state.WALK
 var is_in_mirror : bool = false
@@ -88,6 +89,7 @@ func can_jump() -> bool :
 
 func swap() -> void:
 	print_debug("swap!")
+	swap_cooldown_timer.start(swap_cd )
 	is_in_mirror = !is_in_mirror
 	velocity *= 1.1
 	%PlayerAnim.flip_v = is_in_mirror
