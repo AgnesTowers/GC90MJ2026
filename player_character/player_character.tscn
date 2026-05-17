@@ -80,11 +80,11 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ty04"]
-radius = 23.537205
+radius = 18.248287
 
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=965581527]
 script = ExtResource("1_1ty04")
-jump_velocity = 100.0
+jump_velocity = 200.0
 
 [node name="PlayerAnim" type="AnimatedSprite2D" parent="." unique_id=372963159]
 unique_name_in_owner = true
@@ -106,6 +106,7 @@ script = ExtResource("4_bvxdu")
 
 [node name="GravityManager" type="Node2D" parent="." unique_id=352807087]
 script = ExtResource("5_3f5wo")
+gravity_strength = 40.0
 metadata/_custom_type_script = "uid://og4v5a6vkptl"
 
 [node name="CDUiManager" type="Node2D" parent="." unique_id=38099620]
