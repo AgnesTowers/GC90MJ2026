@@ -57,6 +57,7 @@ func _physics_process(_delta: float) -> void:
 		else :
 			velocity.x = running_max_speed
 	analyse_state()
+	update_cd_ui()
 	move_and_slide()
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -68,6 +69,31 @@ func _unhandled_input(_event: InputEvent) -> void:
 		swap()
 	move_and_slide()
 
+func update_cd_ui() -> void:
+	if !attack_cooldown_timer.is_stopped() :
+		if !%AttackCDUi.visible :
+			%AttackCDUi.visible = true
+		%AttackCDUi.value = attack_cooldown_timer.time_left / attack_cd
+	else :
+		if %AttackCDUi.visible :
+			%AttackCDUi.visible = false
+	
+	if !jump_cooldown_timer.is_stopped() :
+		if !%JumpCDUi.visible :
+			%JumpCDUi.visible = true
+		%JumpCDUi.value =  jump_cooldown_timer.time_left / jump_cd
+	else :
+		if %JumpCDUi.visible :
+			%JumpCDUi.visible = false
+	
+	if !swap_cooldown_timer.is_stopped() :
+		if !%SwapCDUi.visible :
+			%SwapCDUi.visible = true
+		%SwapCDUi.value = swap_cooldown_timer.time_left /swap_cd
+	else :
+		if %SwapCDUi.visible :
+			%SwapCDUi.visible = false
+	pass
 
 func analyse_state() -> void :
 	if current_state != player_state.WALK or current_state != player_state.ATTACK && velocity.y == 0 :

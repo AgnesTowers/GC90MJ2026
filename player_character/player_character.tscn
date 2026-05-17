@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b7jr78584ehx" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Actions.png" id="2_5l2xy"]
 [ext_resource type="Script" uid="uid://duu1jltqfekup" path="res://player_character/AnimationManager.gd" id="4_bvxdu"]
 [ext_resource type="Script" uid="uid://og4v5a6vkptl" path="res://player_character/GravityManager.gd" id="5_3f5wo"]
+[ext_resource type="Texture2D" uid="uid://b25veah8sx07t" path="res://Assets/round.png" id="6_731wj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5l2xy"]
 atlas = ExtResource("2_1ty04")
@@ -111,19 +112,43 @@ metadata/_custom_type_script = "uid://og4v5a6vkptl"
 [node name="CDUiManager" type="Node2D" parent="." unique_id=38099620]
 
 [node name="AttackCDUi" type="TextureProgressBar" parent="CDUiManager" unique_id=1694823594]
+unique_name_in_owner = true
 texture_filter = 3
-offset_right = 40.0
-offset_bottom = 40.0
-fill_mode = 4
+offset_left = -28.75
+offset_top = -26.0
+offset_right = 471.25
+offset_bottom = 474.0
+scale = Vector2(0.015, 0.015)
+max_value = 1.0
+step = 0.01
+fill_mode = 5
+texture_progress = ExtResource("6_731wj")
+tint_progress = Color(1, 0, 0, 1)
 
 [node name="JumpCDUi" type="TextureProgressBar" parent="CDUiManager" unique_id=1177074458]
+unique_name_in_owner = true
 texture_filter = 3
-offset_right = 40.0
-offset_bottom = 40.0
-fill_mode = 4
+offset_left = -3.75
+offset_top = -35.0
+offset_right = 496.25
+offset_bottom = 465.0
+scale = Vector2(0.015, 0.015)
+max_value = 1.0
+step = 0.01
+fill_mode = 5
+texture_progress = ExtResource("6_731wj")
+tint_progress = Color(0, 1, 0, 1)
 
 [node name="SwapCDUi" type="TextureProgressBar" parent="CDUiManager" unique_id=763424525]
+unique_name_in_owner = true
 texture_filter = 3
-offset_right = 40.0
-offset_bottom = 40.0
-fill_mode = 4
+offset_left = 24.25
+offset_top = -28.0
+offset_right = 524.25
+offset_bottom = 472.0
+scale = Vector2(0.015, 0.015)
+max_value = 1.0
+step = 0.01
+fill_mode = 5
+texture_progress = ExtResource("6_731wj")
+tint_progress = Color(0, 0, 1, 1)
