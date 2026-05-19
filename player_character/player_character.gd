@@ -15,10 +15,10 @@ enum player_state{
 @export var jump_cd : float = 1
 @export var attack_cd : float = 1
 @export var swap_cd : float = 1
-@export var attack_duration : float = 0.5
+@export var attack_duration : float = 1
 @export var gravity_mult : float = 4
 
-var current_state : player_state = player_state.WALK
+@onready var current_state : player_state = player_state.WALK
 var is_in_mirror : bool = false
 
 var attack_cooldown_timer : Timer
@@ -58,6 +58,7 @@ func _physics_process(_delta: float) -> void:
 			velocity.x = running_max_speed
 	analyse_state()
 	update_cd_ui()
+	manage_animations()
 	move_and_slide()
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -96,7 +97,7 @@ func update_cd_ui() -> void:
 	pass
 
 func analyse_state() -> void :
-	if current_state != player_state.WALK or current_state != player_state.ATTACK && velocity.y == 0 :
+	if current_state != player_state.WALK and current_state != player_state.ATTACK && velocity.y == 0 :
 		current_state = player_state.WALK
 
 func jump() -> void:
@@ -141,3 +142,8 @@ func can_attack() -> bool:
 
 func end_attack() -> void:
 	current_state = player_state.WALK
+
+func manage_animations() -> void :
+	if str(current_state) != %PlayerAnim.animation :
+		print_debug(str(current_state))
+		%PlayerAnim.play(str(current_state))
