@@ -40,6 +40,8 @@ shader_parameter/border_dash_density = 0.5
 shader_parameter/border_dash_size = 1.0
 shader_parameter/border_dashes_enabled = true
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gwceb"]
+
 [node name="Level1" type="Node2D" unique_id=1652336010]
 
 [node name="Background" type="Node2D" parent="." unique_id=1581400869]
@@ -95,3 +97,8 @@ tile_set = SubResource("TileSet_kx6l7")
 
 [node name="SwapAxis" type="Node2D" parent="." unique_id=1624994116]
 unique_name_in_owner = true
+
+[node name="MirrorDeathPlane" type="Area2D" parent="." unique_id=92521265]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MirrorDeathPlane" unique_id=1085716462]
+shape = SubResource("WorldBoundaryShape2D_gwceb")

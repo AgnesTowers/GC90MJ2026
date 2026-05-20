@@ -10,10 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Godot Game Template"
+config/name="Mirrabbit"
+config/description="An endless game about a rabbit running along the edge of the mirror worlds"
 run/main_scene="res://core/gamemanager.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/use_filter=false
+boot_splash/image="uid://dd6gvoavj3vyh"
+config/icon="uid://dd6gvoavj3vyh"
 
 [audio]
 
