@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://q5xwso1rgiy0"]
+
+[ext_resource type="Script" uid="uid://ct4b82dp2nqyn" path="res://core/Death/death_plane.gd" id="1_6lrlx"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w05js"]
+a = Vector2(-16, 0)
+b = Vector2(16, 1)
+
+[node name="DeathPlane" type="Area2D" unique_id=1395046958]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_6lrlx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1339336698]
+shape = SubResource("SegmentShape2D_w05js")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

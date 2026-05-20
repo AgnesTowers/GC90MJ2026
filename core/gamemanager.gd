@@ -82,7 +82,7 @@ func _show_main_level() -> void:
 		next_level.win.connect(_next_level)
 	if next_level.has_signal("reset"):
 		next_level.reset.connect(_reload_current_level)
-	add_child(next_level)
+	add_child(next_level, true)
 	current_level_node = next_level
 	
 
@@ -108,7 +108,7 @@ func _show_level(level_nr: int) -> void:
 		next_level.win.connect(_next_level)
 	if next_level.has_signal("reset"):
 		next_level.reset.connect(_reload_current_level)
-	add_child(next_level)
+	add_child(next_level, true)
 	current_level_node = next_level
 	
 func _reload_current_level() -> void:

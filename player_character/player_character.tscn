@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b7jr78584ehx" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Actions.png" id="2_5l2xy"]
 [ext_resource type="Script" uid="uid://og4v5a6vkptl" path="res://player_character/GravityManager.gd" id="5_3f5wo"]
 [ext_resource type="Texture2D" uid="uid://b25veah8sx07t" path="res://Assets/round.png" id="6_731wj"]
+[ext_resource type="Script" uid="uid://cngb1hlllqny5" path="res://core/Death/Death_Component.gd" id="6_n4q7y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5l2xy"]
 atlas = ExtResource("2_1ty04")
@@ -81,6 +82,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_1ty04"]
 radius = 18.248287
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_33jgw"]
+radius = 17.029387
+
 [node name="PlayerCharacter" type="CharacterBody2D" unique_id=965581527]
 script = ExtResource("1_1ty04")
 jump_velocity = 200.0
@@ -148,3 +152,12 @@ step = 0.01
 fill_mode = 5
 texture_progress = ExtResource("6_731wj")
 tint_progress = Color(0, 0, 1, 1)
+
+[node name="DeathComponent" type="Area2D" parent="." unique_id=704800521]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("6_n4q7y")
+metadata/_custom_type_script = "uid://cngb1hlllqny5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathComponent" unique_id=1329759607]
+shape = SubResource("CircleShape2D_33jgw")
