@@ -16,4 +16,4 @@ func _ready() -> void:
 
 func _on_die(source: Node) -> void:
 	var level: Level = find_parent("Level?")
-	level.reset.emit()
+	level.level_ending.emit()
