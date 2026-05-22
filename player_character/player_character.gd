@@ -68,7 +68,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 		jump()
 	if Input.is_action_just_pressed("swap") && can_swap():
 		swap()
-	move_and_slide()
 
 func update_cd_ui() -> void:
 	if !attack_cooldown_timer.is_stopped() :
