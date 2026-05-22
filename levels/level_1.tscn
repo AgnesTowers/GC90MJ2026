@@ -1,972 +1,67 @@
-[gd_scene format=4 uid="uid://cyfvcuxi210mg"]
+[gd_scene format=3 uid="uid://cyfvcuxi210mg"]
 
 [ext_resource type="Script" uid="uid://chr036pu1ps3k" path="res://levels/level.gd" id="1_3sk1a"]
 [ext_resource type="Texture2D" uid="uid://be56s56otioyj" path="res://Assets/Free-Summer-Pixel-Art-Backgrounds/PNG/summer8/1.png" id="1_btoec"]
 [ext_resource type="PackedScene" uid="uid://bss3a3ldtfai" path="res://player_character/player_character.tscn" id="1_ilwad"]
 [ext_resource type="Texture2D" uid="uid://dh2xivx256am" path="res://Assets/Free-Summer-Pixel-Art-Backgrounds/PNG/summer5/3.png" id="2_gwceb"]
-[ext_resource type="Script" uid="uid://ch50gpsiugc3v" path="res://core/world_generation/tile_map_mirrorer.gd" id="3_bt44k"]
-[ext_resource type="Texture2D" uid="uid://c67267xrtw3n3" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="5_3sk1a"]
 [ext_resource type="Script" uid="uid://cfli43m7thxek" path="res://effects/mirror_effect_color_rect.gd" id="5_n46q3"]
+[ext_resource type="Script" uid="uid://ddn08n1scqif1" path="res://core/world_generation/chunk.gd" id="8_aerfg"]
 [ext_resource type="PackedScene" uid="uid://q5xwso1rgiy0" path="res://core/Death/death_plane.tscn" id="9_3sk1a"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08mmt"]
-texture = ExtResource("5_3sk1a")
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:0/0 = 0
-4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:0/0 = 0
-5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:0/0 = 0
-7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:0/0 = 0
-8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:0/0 = 0
-9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:1/0 = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:1/0 = 0
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:1/0 = 0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:1/0 = 0
-7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:1/0 = 0
-8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:1/0 = 0
-9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:2/0 = 0
-4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:2/0 = 0
-5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:2/0 = 0
-6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:2/0 = 0
-7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:2/0 = 0
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:2/0 = 0
-9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-10:2/0 = 0
-10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:3/0 = 0
-4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:3/0 = 0
-5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:3/0 = 0
-6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:3/0 = 0
-7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:3/0 = 0
-8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:3/0 = 0
-9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-10:3/0 = 0
-10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:4/0 = 0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:4/0 = 0
-5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:4/0 = 0
-6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:4/0 = 0
-7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:4/0 = 0
-8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:4/0 = 0
-9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-10:4/0 = 0
-10:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:5/0 = 0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:5/0 = 0
-1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:5/0 = 0
-2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:5/0 = 0
-3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:5/0 = 0
-4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:5/0 = 0
-5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:5/0 = 0
-6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:5/0 = 0
-7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:5/0 = 0
-8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:5/0 = 0
-9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-10:5/0 = 0
-10:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:6/0 = 0
-0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:6/0 = 0
-1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:6/0 = 0
-2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:6/0 = 0
-3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:6/0 = 0
-4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:6/0 = 0
-5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:6/0 = 0
-6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:6/0 = 0
-7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:6/0 = 0
-8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:6/0 = 0
-9:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-10:6/0 = 0
-10:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:7/0 = 0
-0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:7/0 = 0
-1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:7/0 = 0
-2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:7/0 = 0
-3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:7/0 = 0
-4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:7/0 = 0
-5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:8/0 = 0
-0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:8/0 = 0
-1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:8/0 = 0
-2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-3:8/0 = 0
-3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-4:8/0 = 0
-4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:8/0 = 0
-5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-6:8/0 = 0
-6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:8/0 = 0
-7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSet" id="TileSet_kx6l7"]
-physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_08mmt")
-
-[sub_resource type="Shader" id="Shader_l53as"]
-code = "shader_type canvas_item;
-
-render_mode blend_mix;
-
-//////////////////////////////////////////////////////////
-// SCREEN
-//////////////////////////////////////////////////////////
-
-uniform sampler2D screen_tex :
-hint_screen_texture,
-filter_linear_mipmap;
-
-//////////////////////////////////////////////////////////
-// MAIN
-//////////////////////////////////////////////////////////
-
-uniform float break_progress :
-hint_range(0.0, 1.0) = 0.0;
-
-uniform vec2 impact_point =
-vec2(0.5, 0.5);
-
-//////////////////////////////////////////////////////////
-// GLASS MASK SHAPE
-//////////////////////////////////////////////////////////
-
-uniform bool use_glass_mask = true;
-
-uniform bool glass_mask_circle = true;
-
-uniform vec2 glass_mask_scale =
-vec2(0.35, 0.35);
-
-uniform vec2 glass_mask_position =
-vec2(0.5, 0.5);
-
-uniform float glass_mask_rotation :
-hint_range(-180.0, 180.0) = 0.0;
-
-uniform float glass_mask_softness :
-hint_range(0.0, 0.5) = 0.02;
-
-//////////////////////////////////////////////////////////
-// IMPACT SHAPE
-//////////////////////////////////////////////////////////
-
-uniform bool use_circle_impact = true;
-
-uniform vec2 impact_shape_scale =
-vec2(1.0, 1.0);
-
-uniform float impact_rotation :
-hint_range(-180.0, 180.0) = 0.0;
-
-//////////////////////////////////////////////////////////
-// SHARDS
-//////////////////////////////////////////////////////////
-
-uniform int pieces_x = 12;
-uniform int pieces_y = 8;
-
-uniform float point_jitter :
-hint_range(0.0, 0.48) = 0.34;
-
-uniform float shard_scatter :
-hint_range(0.0, 2.0) = 0.35;
-
-uniform float gravity :
-hint_range(0.0, 6.0) = 2.4;
-
-uniform float rotation_amount :
-hint_range(0.0, 8.0) = 2.0;
-
-uniform float delay_variation :
-hint_range(0.0, 1.0) = 0.35;
-
-//////////////////////////////////////////////////////////
-// CRACKS
-//////////////////////////////////////////////////////////
-
-uniform float crack_width :
-hint_range(0.0001, 0.03) = 0.002;
-
-uniform float crack_brightness :
-hint_range(0.0, 5.0) = 1.5;
-
-uniform float crack_density :
-hint_range(0.0, 3.0) = 1.0;
-
-uniform vec4 crack_color :
-source_color =
-vec4(1.0,1.0,1.0,1.0);
-
-uniform bool radial_cracks = false;
-
-//////////////////////////////////////////////////////////
-// GLASS
-//////////////////////////////////////////////////////////
-
-uniform vec4 glass_tint :
-source_color =
-vec4(0.75,0.9,1.0,0.15);
-
-uniform float transparency :
-hint_range(0.0,1.0) = 0.15;
-
-//////////////////////////////////////////////////////////
-// HOLES
-//////////////////////////////////////////////////////////
-
-uniform float center_hole_size :
-hint_range(0.0,0.5) = 0.08;
-
-uniform float hole_irregularity :
-hint_range(0.0,1.0) = 0.4;
-
-//////////////////////////////////////////////////////////
-// FX
-//////////////////////////////////////////////////////////
-
-uniform float refraction :
-hint_range(0.0,0.1) = 0.015;
-
-uniform float chromatic :
-hint_range(0.0,0.05) = 0.003;
-
-uniform float shake :
-hint_range(0.0,0.1) = 0.008;
-
-uniform bool pixelated = false;
-
-uniform float pixel_size :
-hint_range(1.0,256.0) = 4.0;
-
-//////////////////////////////////////////////////////////
-
-const int SEARCH_RADIUS = 1;
-
-//////////////////////////////////////////////////////////
-// HASH
-//////////////////////////////////////////////////////////
-
-float hash12(vec2 p) {
-
-	vec3 p3 =
-	fract(vec3(p.xyx) * 0.1031);
-
-	p3 += dot(p3, p3.yzx + 33.33);
-
-	return fract(
-		(p3.x + p3.y)
-		* p3.z
-	);
-}
-
-vec2 hash22(vec2 p) {
-
-	return vec2(
-		hash12(p + vec2(1.23,4.56)),
-		hash12(p + vec2(7.89,0.12))
-	);
-}
-
-//////////////////////////////////////////////////////////
-// ROT
-//////////////////////////////////////////////////////////
-
-mat2 rot(float a) {
-
-	float s = sin(a);
-	float c = cos(a);
-
-	return mat2(
-		vec2(c,-s),
-		vec2(s,c)
-	);
-}
-
-//////////////////////////////////////////////////////////
-// NOISE
-//////////////////////////////////////////////////////////
-
-float noise(vec2 p){
-
-	vec2 i = floor(p);
-	vec2 f = fract(p);
-
-	float a = hash12(i);
-	float b = hash12(i + vec2(1.0,0.0));
-	float c = hash12(i + vec2(0.0,1.0));
-	float d = hash12(i + vec2(1.0,1.0));
-
-	vec2 u =
-	f*f*(3.0-2.0*f);
-
-	return mix(a,b,u.x)
-	+ (c-a)*u.y*(1.0-u.x)
-	+ (d-b)*u.x*u.y;
-}
-
-//////////////////////////////////////////////////////////
-// CELL POINT
-//////////////////////////////////////////////////////////
-
-vec2 cell_point(vec2 cell_id) {
-
-	vec2 h = hash22(cell_id);
-
-	return cell_id
-	+ 0.5
-	+ (h - 0.5)
-	* (point_jitter * 2.0);
-}
-
-//////////////////////////////////////////////////////////
-// VORONOI
-//////////////////////////////////////////////////////////
-
-void voronoi_info(
-	vec2 p,
-	out vec2 owner_cell,
-	out vec2 owner_point,
-	out float edge_dist
-){
-
-	vec2 base = floor(p);
-
-	float best_d = 1e20;
-	float second_d = 1e20;
-
-	vec2 best_cell = vec2(0.0);
-	vec2 best_point = vec2(0.0);
-
-	for(int j=-SEARCH_RADIUS;j<=SEARCH_RADIUS;j++){
-
-		for(int i=-SEARCH_RADIUS;i<=SEARCH_RADIUS;i++){
-
-			vec2 c =
-			base + vec2(float(i),float(j));
-
-			vec2 pt =
-			cell_point(c);
-
-			float d =
-			distance(p,pt);
-
-			if(d < best_d){
-
-				second_d = best_d;
-				best_d = d;
-
-				best_cell = c;
-				best_point = pt;
-
-			}else if(d < second_d){
-
-				second_d = d;
-			}
-		}
-	}
-
-	owner_cell = best_cell;
-	owner_point = best_point;
-
-	edge_dist =
-	second_d - best_d;
-}
-
-//////////////////////////////////////////////////////////
-// GLASS MASK
-//////////////////////////////////////////////////////////
-
-float glass_mask(vec2 uv){
-
-	vec2 local_uv =
-	uv - glass_mask_position;
-
-	float rot_rad =
-	radians(glass_mask_rotation);
-
-	local_uv =
-	rot(rot_rad) * local_uv;
-
-	local_uv /= glass_mask_scale;
-
-	float dist;
-
-	if(glass_mask_circle){
-
-		dist = length(local_uv);
-
-	}else{
-
-		vec2 d = abs(local_uv);
-
-		dist = max(d.x, d.y);
-	}
-
-	return 1.0 - smoothstep(
-		1.0 - glass_mask_softness,
-		1.0,
-		dist
-	);
-}
-
-//////////////////////////////////////////////////////////
-// SHARD TRANSFORM
-//////////////////////////////////////////////////////////
-
-void piece_transform(
-
-	vec2 piece_cell,
-
-	out float t,
-	out vec2 piece_offset_uv,
-	out float piece_angle
-
-){
-
-	float rnd =
-	hash12(piece_cell);
-
-	float rnd2 =
-	hash12(piece_cell + 17.37);
-
-	float rnd3 =
-	hash12(piece_cell + 91.11);
-
-	vec2 grid =
-	vec2(
-		float(pieces_x),
-		float(pieces_y)
-	);
-
-	vec2 piece_uv =
-	(piece_cell + 0.5) / grid;
-
-	float impact_dist =
-	distance(
-		piece_uv,
-		impact_point
-	);
-
-	float radial_delay =
-	impact_dist * delay_variation;
-
-	float delay =
-	rnd * 0.2
-	+ radial_delay;
-
-	t = clamp(
-		(break_progress - delay)
-		/ max(0.0001,1.0-delay),
-		0.0,
-		1.0
-	);
-
-	vec2 explode_dir =
-	normalize(
-		piece_uv
-		- impact_point
-	);
-
-	float explode_force =
-	(1.0 - impact_dist);
-
-	explode_force =
-	max(explode_force,0.0);
-
-	float drift_x =
-	explode_dir.x
-	* shard_scatter
-	* t
-	* explode_force;
-
-	float drift_y =
-	explode_dir.y
-	* shard_scatter
-	* 0.35
-	* t
-	* explode_force;
-
-	float fall_y =
-	gravity
-	* t
-	* t
-	* (0.3 + rnd2);
-
-	piece_offset_uv =
-	vec2(
-		drift_x,
-		drift_y + fall_y
-	);
-
-	piece_angle =
-	(rnd - 0.5)
-	* rotation_amount
-	* t
-	* explode_force;
-}
-
-//////////////////////////////////////////////////////////
-// MAIN
-//////////////////////////////////////////////////////////
-
-void fragment() {
-
-	vec2 uv = UV;
-
-	//////////////////////////////////////////////////////
-	// PIXEL
-	//////////////////////////////////////////////////////
-
-	if(pixelated){
-
-		uv =
-		floor(uv * pixel_size)
-		/ pixel_size;
-	}
-
-	//////////////////////////////////////////////////////
-	// SHAKE
-	//////////////////////////////////////////////////////
-
-	uv += vec2(
-		sin(TIME*120.0 + uv.y*40.0),
-		cos(TIME*90.0 + uv.x*50.0)
-	) * shake * break_progress;
-
-	//////////////////////////////////////////////////////
-	// FRACTURE SPACE
-	//////////////////////////////////////////////////////
-
-	vec2 grid =
-	vec2(
-		float(pieces_x),
-		float(pieces_y)
-	);
-
-	vec2 p_now =
-	uv * grid;
-
-	//////////////////////////////////////////////////////
-	// CURRENT SHARD
-	//////////////////////////////////////////////////////
-
-	vec2 now_cell;
-	vec2 now_point;
-
-	float now_edge;
-
-	voronoi_info(
-		p_now,
-		now_cell,
-		now_point,
-		now_edge
-	);
-
-	//////////////////////////////////////////////////////
-	// TRANSFORM
-	//////////////////////////////////////////////////////
-
-	float t;
-
-	vec2 piece_offset_uv;
-
-	float piece_angle;
-
-	piece_transform(
-		now_cell,
-		t,
-		piece_offset_uv,
-		piece_angle
-	);
-
-	//////////////////////////////////////////////////////
-	// SHARD CENTER
-	//////////////////////////////////////////////////////
-
-	vec2 piece_center_uv =
-	now_point / grid;
-
-	//////////////////////////////////////////////////////
-	// REVERSE TRANSFORM
-	//////////////////////////////////////////////////////
-
-	vec2 rel_now =
-	uv - piece_center_uv;
-
-	vec2 uv_from =
-	piece_center_uv
-	+ rot(-piece_angle)
-	* (rel_now - piece_offset_uv);
-
-	//////////////////////////////////////////////////////
-	// SCREEN MASK
-	//////////////////////////////////////////////////////
-
-	float inside_screen =
-
-	step(0.0, uv_from.x)
-	*
-	step(0.0, uv_from.y)
-	*
-	step(uv_from.x,1.0)
-	*
-	step(uv_from.y,1.0);
-
-	vec2 safe_uv =
-	clamp(
-		uv_from,
-		vec2(0.0),
-		vec2(1.0)
-	);
-
-	//////////////////////////////////////////////////////
-	// ORIGINAL SHARD
-	//////////////////////////////////////////////////////
-
-	vec2 p_from =
-	safe_uv * grid;
-
-	vec2 from_cell;
-	vec2 from_point;
-
-	float from_edge;
-
-	voronoi_info(
-		p_from,
-		from_cell,
-		from_point,
-		from_edge
-	);
-
-	float same_piece =
-	1.0
-	- step(
-		0.001,
-		distance(
-			from_cell,
-			now_cell
-		)
-	);
-
-	//////////////////////////////////////////////////////
-	// IMPACT SHAPE
-	//////////////////////////////////////////////////////
-
-	vec2 local_uv =
-	uv - impact_point;
-
-	float rot_rad =
-	radians(impact_rotation);
-
-	local_uv =
-	rot(rot_rad) * local_uv;
-
-	local_uv /= impact_shape_scale;
-
-	float impact_dist;
-
-	if(use_circle_impact){
-
-		impact_dist =
-		length(local_uv);
-
-	}else{
-
-		vec2 d = abs(local_uv);
-
-		impact_dist =
-		max(d.x, d.y);
-	}
-
-	//////////////////////////////////////////////////////
-	// REFRACTION
-	//////////////////////////////////////////////////////
-
-	vec2 refract_dir =
-	(normalize(
-		uv - impact_point
-	) * refraction);
-
-	vec2 refract_uv =
-	SCREEN_UV
-	+ refract_dir
-	* t;
-
-	//////////////////////////////////////////////////////
-	// CHROMATIC
-	//////////////////////////////////////////////////////
-
-	float r =
-	texture(
-		screen_tex,
-		refract_uv
-		+ vec2(chromatic,0.0)
-	).r;
-
-	float g =
-	texture(
-		screen_tex,
-		refract_uv
-	).g;
-
-	float b =
-	texture(
-		screen_tex,
-		refract_uv
-		- vec2(chromatic,0.0)
-	).b;
-
-	vec4 col =
-	texture(
-		screen_tex,
-		SCREEN_UV
-	);
-
-	col.rgb = vec3(r,g,b);
-
-	//////////////////////////////////////////////////////
-	// GLASS TINT
-	//////////////////////////////////////////////////////
-
-	col.rgb =
-	mix(
-		col.rgb,
-		glass_tint.rgb,
-		transparency
-	);
-
-	//////////////////////////////////////////////////////
-	// CRACK EDGES
-	//////////////////////////////////////////////////////
-
-	float edge =
-	1.0
-	- smoothstep(
-		0.0,
-		crack_width,
-		now_edge
-	);
-
-	//////////////////////////////////////////////////////
-	// RADIAL CRACKS
-	//////////////////////////////////////////////////////
-	
-	float crack_mask;
-	
-	if (radial_cracks == true) {
-		float radial =
-	abs(
-		sin(
-			atan(
-				uv.y - impact_point.y,
-				uv.x - impact_point.x
-			)
-			* 30.0
-		)
-	);
-
-	radial =
-	pow(radial, 24.0);
-
-	float radial_fade =
-	smoothstep(
-		1.0,
-		0.0,
-		impact_dist
-	);
-	
-	crack_mask =
-	radial
-	* radial_fade
-	* break_progress
-	* crack_density;
-	} else {
-		crack_mask =
-		break_progress
-	* crack_density;
-	}
-	
-	
-
-	//////////////////////////////////////////////////////
-	// COMBINE CRACKS
-	//////////////////////////////////////////////////////
-
-	float cracks =
-	max(edge, crack_mask);
-
-	col.rgb +=
-	crack_color.rgb
-	* cracks
-	* crack_brightness;
-
-	//////////////////////////////////////////////////////
-	// CENTER HOLE
-	//////////////////////////////////////////////////////
-
-	float hole_noise =
-	noise(uv * 40.0);
-
-	float hole =
-	smoothstep(
-		center_hole_size
-		+ hole_noise
-		* hole_irregularity
-		* 0.05,
-
-		0.0,
-
-		impact_dist
-	);
-
-	hole *=
-	smoothstep(
-		0.3,
-		0.8,
-		break_progress
-	);
-
-	//////////////////////////////////////////////////////
-	// ALPHA
-	//////////////////////////////////////////////////////
-
-	col.a *= inside_screen;
-	col.a *= same_piece;
-	col.a *= (1.0 - hole);
-
-	//////////////////////////////////////////////////////
-	// GLASS MASK
-	//////////////////////////////////////////////////////
-
-	if(use_glass_mask){
-
-		float mask =
-		glass_mask(uv);
-
-		col.a *= mask;
-	}
-
-	//////////////////////////////////////////////////////
-	// FINAL
-	//////////////////////////////////////////////////////
-
-	COLOR = col;
-}"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3sk1a"]
-shader = SubResource("Shader_l53as")
+[ext_resource type="Script" uid="uid://yfsf065h2275" path="res://core/world_generation/LevelChunkManager.gd" id="9_08mmt"]
+[ext_resource type="TileSet" uid="uid://dhc7ysfeuo045" path="res://Assets/Tilesets/Platforms_Tileset.tres" id="10_5ot28"]
+[ext_resource type="Script" uid="uid://c78fuc38p1l8q" path="res://core/world_generation/chunk_features/ChunkFeaturePalette.gd" id="10_08mmt"]
+[ext_resource type="Shader" uid="uid://dwgrh21paj58t" path="res://Assets/glass_shatter.gdshader" id="10_aerfg"]
+[ext_resource type="PackedScene" uid="uid://5q8tkkvow8nr" path="res://core/world_generation/chunk.tscn" id="12_nmsli"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3sk1a"]
+frequency = 0.516
+offset = Vector3(0, 0, 0.25)
+
+[sub_resource type="Curve" id="Curve_3sk1a"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.65018773), 1.6115384, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_08mmt"]
+script = ExtResource("10_08mmt")
+_features = 1
+all_features = Dictionary[String, String]({
+"Gap_Big": "res://core/world_generation/chunk_features/Gap_Big.tscn",
+"Gap_Small": "res://core/world_generation/chunk_features/Gap_Small.tscn"
+})
+included_feature = null
+metadata/_custom_type_script = "uid://c78fuc38p1l8q"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmsli"]
+shader = ExtResource("10_aerfg")
 shader_parameter/break_progress = 0.0
 shader_parameter/impact_point = Vector2(0.5, 0)
 shader_parameter/use_glass_mask = false
 shader_parameter/glass_mask_circle = false
 shader_parameter/glass_mask_scale = Vector2(0.35, 0.35)
 shader_parameter/glass_mask_position = Vector2(0.5, 0.5)
-shader_parameter/glass_mask_rotation = 8.549999989782009e-06
+shader_parameter/glass_mask_rotation = 0.0
 shader_parameter/glass_mask_softness = 0.02
 shader_parameter/use_circle_impact = true
 shader_parameter/impact_shape_scale = Vector2(1, 1)
-shader_parameter/impact_rotation = 8.549999989782009e-06
+shader_parameter/impact_rotation = 0.0
 shader_parameter/pieces_x = 12
 shader_parameter/pieces_y = 8
-shader_parameter/point_jitter = 0.47999998927116
-shader_parameter/shard_scatter = 1.18000005605
-shader_parameter/gravity = 3.814000181165
-shader_parameter/rotation_amount = 4.00000019
-shader_parameter/delay_variation = 0.458000021755
+shader_parameter/point_jitter = 0.34
+shader_parameter/shard_scatter = 0.35
+shader_parameter/gravity = 2.4
+shader_parameter/rotation_amount = 2.0
+shader_parameter/delay_variation = 0.35
 shader_parameter/crack_width = 9.999999747e-05
 shader_parameter/crack_brightness = 1.5
 shader_parameter/crack_density = 1.0
 shader_parameter/crack_color = Color(1, 1, 1, 1)
 shader_parameter/radial_cracks = true
-shader_parameter/glass_tint = Color(0.62, 0.8, 1, 0.15)
-shader_parameter/transparency = 0.494000023465
-shader_parameter/center_hole_size = 0.0
+shader_parameter/glass_tint = Color(0.75, 0.9, 1, 0.15)
+shader_parameter/transparency = 0.15
+shader_parameter/center_hole_size = 0.08
 shader_parameter/hole_irregularity = 0.4
-shader_parameter/refraction = 0.0450000021375
-shader_parameter/chromatic = 0.0130000006175
+shader_parameter/refraction = 0.0550000026125
+shader_parameter/chromatic = 0.02000000095
 shader_parameter/shake = 0.0
 shader_parameter/pixelated = true
 shader_parameter/pixel_size = 256.0
@@ -1036,26 +131,83 @@ texture = ExtResource("2_gwceb")
 
 [node name="PlayerCharacter" parent="." unique_id=965581527 instance=ExtResource("1_ilwad")]
 unique_name_in_owner = true
-position = Vector2(13, -173)
+position = Vector2(0, -134)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=987080990]
-tile_map_data = PackedByteArray("AAATAP3/AQABAAIAAAAUAP3/AQABAAIAAAAVAP3/AQABAAIAAAAWAP3/AQABAAIAAAABAP//AQAAAAIAAAACAP//AQABAAIAAAADAP7/AQABAAIAAAAEAP7/AQABAAIAAAAFAP7/AQABAAIAAAAGAP7/AQABAAIAAAAHAP7/AQABAAIAAAAIAP7/AQABAAIAAAAJAP3/AQABAAIAAAAKAP3/AQABAAIAAAArAP7/AQABAAIAAAAsAP7/AQABAAIAAAAtAP7/AQABAAIAAAAvAP//AQABAAIAAAAwAP//AQABAAIAAAAxAP//AQABAAIAAAAjAP7/AQABAAIAAAAkAP7/AQABAAMAAAAlAP7/AQABAAMAAAAmAP7/AQABAAIAAAAnAP7/AQABAAIAAAAoAP7/AQABAAIAAAApAP7/AQABAAIAAAAqAP7/AQABAAIAAAADAP//AQABAAIAAAAEAP//AQABAAIAAAAFAP//AQABAAIAAAAGAP//AQABAAIAAAAHAP//AQABAAIAAAAIAP//AQABAAIAAAAJAP//AQABAAIAAAAKAP//AQABAAIAAAALAP//AQABAAIAAAAMAP//AQABAAIAAAANAP//AQABAAIAAAAOAP//AQABAAIAAAAPAP//AQABAAIAAAAQAP//AQABAAIAAAARAP//AQABAAIAAAASAP//AQABAAIAAAATAP//AQABAAIAAAAUAP//AQABAAIAAAAVAP//AQABAAIAAAAWAP//AQABAAIAAAAXAP//AQABAAIAAAAYAP//AQABAAIAAAAZAP//AQABAAIAAAAaAP//AQABAAIAAAAbAP//AQABAAIAAAAcAP//AQABAAIAAAAdAP//AQABAAIAAAAeAP//AQABAAIAAAAfAP//AQABAAIAAAAgAP//AQABAAIAAAAhAP//AQABAAIAAAAiAP//AQABAAIAAAAjAP//AQABAAIAAAAkAP//AQABAAIAAAAlAP//AQABAAIAAAAmAP//AQABAAIAAAAnAP//AQABAAIAAAAoAP//AQABAAIAAAApAP//AQABAAIAAAAqAP//AQABAAIAAAArAP//AQABAAIAAAAsAP//AQABAAIAAAAtAP//AQABAAIAAAAiAP7/AQABAAIAAAAhAP7/AQABAAIAAAAgAP7/AQABAAIAAAAfAP7/AQABAAIAAAAeAP7/AQABAAIAAAAdAP7/AQABAAIAAAAcAP7/AQABAAIAAAAbAP7/AQABAAIAAAAaAP7/AQABAAIAAAAZAP7/AQABAAIAAAAYAP7/AQABAAIAAAAXAP7/AQABAAIAAAAWAP7/AQABAAIAAAAVAP7/AQABAAIAAAAUAP7/AQABAAIAAAATAP7/AQABAAIAAAASAP7/AQABAAIAAAARAP7/AQABAAIAAAAQAP7/AQABAAIAAAAPAP7/AQABAAIAAAAOAP7/AQABAAIAAAANAP7/AQABAAIAAAAMAP7/AQABAAIAAAALAP7/AQABAAIAAAAKAP7/AQABAAIAAAAJAP7/AQABAAIAAAALAP3/AQABAAIAAAAMAP3/AQABAAIAAAANAP3/AQABAAIAAAAOAP3/AQABAAIAAAAPAP3/AQABAAIAAAAQAP3/AQABAAIAAAARAP3/AQABAAIAAAASAP3/AQABAAIAAAAXAP3/AQABAAIAAAAYAP3/AQABAAIAAAAuAP//AQABAAIAAAAmAPT/AQABAAIAAAAmAPX/AQABAAIAAAAmAPb/AQABAAIAAAAmAPf/AQABAAIAAAAmAPj/AQABAAIAAAAmAPn/AQABAAIAAAAmAPr/AQABAAIAAAAmAPv/AQABAAIAAAAmAPz/AQABAAIAAAAnAPT/AQABAAIAAAAnAPX/AQABAAIAAAAnAPb/AQABAAIAAAAnAPf/AQABAAIAAAAnAPj/AQABAAIAAAAnAPn/AQABAAIAAAAnAPr/AQABAAIAAAAnAPv/AQABAAIAAAAnAPz/AQABAAIAAAAoAPT/AQABAAIAAAAoAPX/AQABAAIAAAAoAPb/AQABAAIAAAAoAPf/AQABAAIAAAAoAPj/AQABAAIAAAAoAPn/AQABAAIAAAAoAPr/AQABAAIAAAAoAPv/AQABAAIAAAAoAPz/AQABAAIAAAApAPT/AQABAAIAAAApAPX/AQABAAIAAAApAPb/AQABAAIAAAApAPf/AQABAAIAAAApAPj/AQABAAIAAAApAPn/AQABAAIAAAApAPr/AQABAAIAAAApAPv/AQABAAIAAAApAPz/AQABAAIAAAAqAPT/AQABAAIAAAAqAPX/AQABAAIAAAAqAPb/AQABAAIAAAAqAPf/AQABAAIAAAAqAPj/AQABAAIAAAAqAPn/AQABAAIAAAAqAPr/AQABAAIAAAAqAPv/AQABAAIAAAAqAPz/AQABAAIAAAArAPT/AQABAAIAAAArAPX/AQABAAIAAAArAPb/AQABAAIAAAArAPf/AQABAAIAAAArAPj/AQABAAIAAAArAPn/AQABAAIAAAArAPr/AQABAAIAAAArAPv/AQABAAIAAAArAPz/AQABAAIAAAAsAPT/AQABAAIAAAAsAPX/AQABAAIAAAAsAPb/AQABAAIAAAAsAPf/AQABAAIAAAAsAPj/AQABAAIAAAAsAPn/AQABAAIAAAAsAPr/AQABAAIAAAAsAPv/AQABAAIAAAAsAPz/AQABAAIAAAAtAPT/AQABAAIAAAAtAPX/AQABAAIAAAAtAPb/AQABAAIAAAAtAPf/AQABAAIAAAAtAPj/AQABAAIAAAAtAPn/AQABAAIAAAAtAPr/AQABAAIAAAAtAPv/AQABAAIAAAAtAPz/AQABAAIAAAAuAPT/AQABAAIAAAAuAPX/AQABAAIAAAAuAPb/AQABAAIAAAAuAPf/AQABAAIAAAAuAPj/AQABAAIAAAAuAPn/AQABAAIAAAAuAPr/AQABAAIAAAAuAPv/AQABAAIAAAAuAPz/AQABAAIAAAAmAP3/AQABAAIAAAAnAP3/AQABAAIAAAAoAP3/AQABAAIAAAApAP3/AQABAAIAAAAqAP3/AQABAAIAAAArAP3/AQABAAIAAAAsAP3/AQABAAIAAAAtAP3/AQABAAIAAAAuAP3/AQABAAIAAAAuAP7/AQABAAIAAAAvAP3/AQABAAIAAAAvAP7/AQABAAIAAAAwAP3/AQABAAIAAAAwAP7/AQABAAIAAAAxAP3/AQABAAIAAAAxAP7/AQABAAIAAAAyAP3/AQABAAIAAAAyAP7/AQABAAIAAAAyAP//AQABAAIAAAAzAP3/AQABAAIAAAAzAP7/AQABAAIAAAAzAP//AQABAAIAAAA0AP3/AQABAAIAAAA0AP7/AQABAAIAAAA0AP//AQABAAIAAAA1AP3/AQABAAIAAAA1AP7/AQABAAIAAAA1AP//AQABAAIAAAA2AP3/AQABAAIAAAA2AP7/AQABAAIAAAA2AP//AQABAAIAAAA3AP3/AQABAAIAAAA3AP7/AQABAAIAAAA3AP//AQABAAIAAAA4AP3/AQABAAIAAAA4AP7/AQABAAIAAAA4AP//AQABAAIAAAA5AP3/AQABAAIAAAA5AP7/AQABAAIAAAA5AP//AQABAAIAAAA6AP3/AQABAAIAAAA6AP7/AQABAAIAAAA6AP//AQABAAIAAAA7AP3/AQABAAIAAAA7AP7/AQABAAIAAAA7AP//AQABAAIAAAA=")
-tile_set = SubResource("TileSet_kx6l7")
+[node name="LevelChunkManager" type="Node2D" parent="." unique_id=2125627571]
+position = Vector2(0, -4)
+script = ExtResource("9_08mmt")
+slope_noise = SubResource("FastNoiseLite_3sk1a")
+noise_power = 100.0
+mountain_slope_curve = SubResource("Curve_3sk1a")
+platform_tile_set = ExtResource("10_5ot28")
+feature_palette = SubResource("Resource_08mmt")
+metadata/_custom_type_script = "uid://yfsf065h2275"
 
-[node name="TileMapLayerMirror" type="Node2D" parent="." unique_id=92559148 node_paths=PackedStringArray("source_tile_map_layers")]
-script = ExtResource("3_bt44k")
-source_tile_map_layers = [NodePath("../TileMapLayer")]
-mirror_offest = Vector2(0, -0.5)
-metadata/_custom_type_script = "uid://ch50gpsiugc3v"
+[node name="Chunk" type="Node2D" parent="LevelChunkManager" unique_id=2014685318 instance=ExtResource("12_nmsli")]
+script = ExtResource("8_aerfg")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayerMirror" unique_id=584909698]
-position = Vector2(0, -8)
-scale = Vector2(1, -1)
-tile_map_data = PackedByteArray("AAATAP3/AQABAAIAAAAUAP3/AQABAAIAAAAVAP3/AQABAAIAAAAWAP3/AQABAAIAAAABAP//AQAAAAIAAAACAP//AQABAAIAAAADAP7/AQABAAIAAAAEAP7/AQABAAIAAAAFAP7/AQABAAIAAAAGAP7/AQABAAIAAAAHAP7/AQABAAIAAAAIAP7/AQABAAIAAAAJAP3/AQABAAIAAAAKAP3/AQABAAIAAAArAP7/AQABAAIAAAAsAP7/AQABAAIAAAAtAP7/AQABAAIAAAAvAP//AQABAAIAAAAwAP//AQABAAIAAAAxAP//AQABAAIAAAAjAP7/AQABAAIAAAAkAP7/AQABAAMAAAAlAP7/AQABAAMAAAAmAP7/AQABAAIAAAAnAP7/AQABAAIAAAAoAP7/AQABAAIAAAApAP7/AQABAAIAAAAqAP7/AQABAAIAAAADAP//AQABAAIAAAAEAP//AQABAAIAAAAFAP//AQABAAIAAAAGAP//AQABAAIAAAAHAP//AQABAAIAAAAIAP//AQABAAIAAAAJAP//AQABAAIAAAAKAP//AQABAAIAAAALAP//AQABAAIAAAAMAP//AQABAAIAAAANAP//AQABAAIAAAAOAP//AQABAAIAAAAPAP//AQABAAIAAAAQAP//AQABAAIAAAARAP//AQABAAIAAAASAP//AQABAAIAAAATAP//AQABAAIAAAAUAP//AQABAAIAAAAVAP//AQABAAIAAAAWAP//AQABAAIAAAAXAP//AQABAAIAAAAYAP//AQABAAIAAAAZAP//AQABAAIAAAAaAP//AQABAAIAAAAbAP//AQABAAIAAAAcAP//AQABAAIAAAAdAP//AQABAAIAAAAeAP//AQABAAIAAAAfAP//AQABAAIAAAAgAP//AQABAAIAAAAhAP//AQABAAIAAAAiAP//AQABAAIAAAAjAP//AQABAAIAAAAkAP//AQABAAIAAAAlAP//AQABAAIAAAAmAP//AQABAAIAAAAnAP//AQABAAIAAAAoAP//AQABAAIAAAApAP//AQABAAIAAAAqAP//AQABAAIAAAArAP//AQABAAIAAAAsAP//AQABAAIAAAAtAP//AQABAAIAAAAiAP7/AQABAAIAAAAhAP7/AQABAAIAAAAgAP7/AQABAAIAAAAfAP7/AQABAAIAAAAeAP7/AQABAAIAAAAdAP7/AQABAAIAAAAcAP7/AQABAAIAAAAbAP7/AQABAAIAAAAaAP7/AQABAAIAAAAZAP7/AQABAAIAAAAYAP7/AQABAAIAAAAXAP7/AQABAAIAAAAWAP7/AQABAAIAAAAVAP7/AQABAAIAAAAUAP7/AQABAAIAAAATAP7/AQABAAIAAAASAP7/AQABAAIAAAARAP7/AQABAAIAAAAQAP7/AQABAAIAAAAPAP7/AQABAAIAAAAOAP7/AQABAAIAAAANAP7/AQABAAIAAAAMAP7/AQABAAIAAAALAP7/AQABAAIAAAAKAP7/AQABAAIAAAAJAP7/AQABAAIAAAALAP3/AQABAAIAAAAMAP3/AQABAAIAAAANAP3/AQABAAIAAAAOAP3/AQABAAIAAAAPAP3/AQABAAIAAAAQAP3/AQABAAIAAAARAP3/AQABAAIAAAASAP3/AQABAAIAAAAXAP3/AQABAAIAAAAYAP3/AQABAAIAAAAuAP//AQABAAIAAAAmAPT/AQABAAIAAAAmAPX/AQABAAIAAAAmAPb/AQABAAIAAAAmAPf/AQABAAIAAAAmAPj/AQABAAIAAAAmAPn/AQABAAIAAAAmAPr/AQABAAIAAAAmAPv/AQABAAIAAAAmAPz/AQABAAIAAAAnAPT/AQABAAIAAAAnAPX/AQABAAIAAAAnAPb/AQABAAIAAAAnAPf/AQABAAIAAAAnAPj/AQABAAIAAAAnAPn/AQABAAIAAAAnAPr/AQABAAIAAAAnAPv/AQABAAIAAAAnAPz/AQABAAIAAAAoAPT/AQABAAIAAAAoAPX/AQABAAIAAAAoAPb/AQABAAIAAAAoAPf/AQABAAIAAAAoAPj/AQABAAIAAAAoAPn/AQABAAIAAAAoAPr/AQABAAIAAAAoAPv/AQABAAIAAAAoAPz/AQABAAIAAAApAPT/AQABAAIAAAApAPX/AQABAAIAAAApAPb/AQABAAIAAAApAPf/AQABAAIAAAApAPj/AQABAAIAAAApAPn/AQABAAIAAAApAPr/AQABAAIAAAApAPv/AQABAAIAAAApAPz/AQABAAIAAAAqAPT/AQABAAIAAAAqAPX/AQABAAIAAAAqAPb/AQABAAIAAAAqAPf/AQABAAIAAAAqAPj/AQABAAIAAAAqAPn/AQABAAIAAAAqAPr/AQABAAIAAAAqAPv/AQABAAIAAAAqAPz/AQABAAIAAAArAPT/AQABAAIAAAArAPX/AQABAAIAAAArAPb/AQABAAIAAAArAPf/AQABAAIAAAArAPj/AQABAAIAAAArAPn/AQABAAIAAAArAPr/AQABAAIAAAArAPv/AQABAAIAAAArAPz/AQABAAIAAAAsAPT/AQABAAIAAAAsAPX/AQABAAIAAAAsAPb/AQABAAIAAAAsAPf/AQABAAIAAAAsAPj/AQABAAIAAAAsAPn/AQABAAIAAAAsAPr/AQABAAIAAAAsAPv/AQABAAIAAAAsAPz/AQABAAIAAAAtAPT/AQABAAIAAAAtAPX/AQABAAIAAAAtAPb/AQABAAIAAAAtAPf/AQABAAIAAAAtAPj/AQABAAIAAAAtAPn/AQABAAIAAAAtAPr/AQABAAIAAAAtAPv/AQABAAIAAAAtAPz/AQABAAIAAAAuAPT/AQABAAIAAAAuAPX/AQABAAIAAAAuAPb/AQABAAIAAAAuAPf/AQABAAIAAAAuAPj/AQABAAIAAAAuAPn/AQABAAIAAAAuAPr/AQABAAIAAAAuAPv/AQABAAIAAAAuAPz/AQABAAIAAAAmAP3/AQABAAIAAAAnAP3/AQABAAIAAAAoAP3/AQABAAIAAAApAP3/AQABAAIAAAAqAP3/AQABAAIAAAArAP3/AQABAAIAAAAsAP3/AQABAAIAAAAtAP3/AQABAAIAAAAuAP3/AQABAAIAAAAuAP7/AQABAAIAAAAvAP3/AQABAAIAAAAvAP7/AQABAAIAAAAwAP3/AQABAAIAAAAwAP7/AQABAAIAAAAxAP3/AQABAAIAAAAxAP7/AQABAAIAAAAyAP3/AQABAAIAAAAyAP7/AQABAAIAAAAyAP//AQABAAIAAAAzAP3/AQABAAIAAAAzAP7/AQABAAIAAAAzAP//AQABAAIAAAA0AP3/AQABAAIAAAA0AP7/AQABAAIAAAA0AP//AQABAAIAAAA1AP3/AQABAAIAAAA1AP7/AQABAAIAAAA1AP//AQABAAIAAAA2AP3/AQABAAIAAAA2AP7/AQABAAIAAAA2AP//AQABAAIAAAA3AP3/AQABAAIAAAA3AP7/AQABAAIAAAA3AP//AQABAAIAAAA4AP3/AQABAAIAAAA4AP7/AQABAAIAAAA4AP//AQABAAIAAAA5AP3/AQABAAIAAAA5AP7/AQABAAIAAAA5AP//AQABAAIAAAA6AP3/AQABAAIAAAA6AP7/AQABAAIAAAA6AP//AQABAAIAAAA7AP3/AQABAAIAAAA7AP7/AQABAAIAAAA7AP//AQABAAIAAAA=")
-tile_set = SubResource("TileSet_kx6l7")
+[node name="Chunk2" type="Node2D" parent="LevelChunkManager" unique_id=1411911203 instance=ExtResource("12_nmsli")]
+position = Vector2(512, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk3" type="Node2D" parent="LevelChunkManager" unique_id=170748533 instance=ExtResource("12_nmsli")]
+position = Vector2(1024, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk4" type="Node2D" parent="LevelChunkManager" unique_id=1129092759 instance=ExtResource("12_nmsli")]
+position = Vector2(1536, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk5" type="Node2D" parent="LevelChunkManager" unique_id=1628539763 instance=ExtResource("12_nmsli")]
+position = Vector2(2048, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk6" type="Node2D" parent="LevelChunkManager" unique_id=1519643878 instance=ExtResource("12_nmsli")]
+position = Vector2(2560, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk7" type="Node2D" parent="LevelChunkManager" unique_id=1770441029 instance=ExtResource("12_nmsli")]
+position = Vector2(3072, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk8" type="Node2D" parent="LevelChunkManager" unique_id=1076880671 instance=ExtResource("12_nmsli")]
+position = Vector2(3584, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk9" type="Node2D" parent="LevelChunkManager" unique_id=1806626447 instance=ExtResource("12_nmsli")]
+position = Vector2(4096, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk10" type="Node2D" parent="LevelChunkManager" unique_id=1441704721 instance=ExtResource("12_nmsli")]
+position = Vector2(4608, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk11" type="Node2D" parent="LevelChunkManager" unique_id=60334871 instance=ExtResource("12_nmsli")]
+position = Vector2(5120, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk12" type="Node2D" parent="LevelChunkManager" unique_id=1338185221 instance=ExtResource("12_nmsli")]
+position = Vector2(5632, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk13" type="Node2D" parent="LevelChunkManager" unique_id=1809462253 instance=ExtResource("12_nmsli")]
+position = Vector2(6144, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk14" type="Node2D" parent="LevelChunkManager" unique_id=266986964 instance=ExtResource("12_nmsli")]
+position = Vector2(6656, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk15" type="Node2D" parent="LevelChunkManager" unique_id=257632039 instance=ExtResource("12_nmsli")]
+position = Vector2(7168, 0)
+script = ExtResource("8_aerfg")
+
+[node name="Chunk16" type="Node2D" parent="LevelChunkManager" unique_id=1175932642 instance=ExtResource("12_nmsli")]
+position = Vector2(7680, 0)
+script = ExtResource("8_aerfg")
 
 [node name="MirrorEffectColorRect" type="ColorRect" parent="." unique_id=296249942 node_paths=PackedStringArray("target")]
-material = SubResource("ShaderMaterial_3sk1a")
+material = SubResource("ShaderMaterial_nmsli")
 offset_left = -559.0
 offset_right = 459.0
 offset_bottom = 654.0
@@ -1064,7 +216,6 @@ target = NodePath("../PlayerCharacter")
 offset = Vector2i(-512, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MirrorEffectColorRect" unique_id=249846937]
-root_node = NodePath("../../TileMapLayerMirror")
 libraries/ = SubResource("AnimationLibrary_5ot28")
 
 [node name="SwapAxis" type="Node2D" parent="." unique_id=1624994116]
