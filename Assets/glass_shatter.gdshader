@@ -91,6 +91,8 @@ uniform vec4 crack_color :
 source_color =
 vec4(1.0,1.0,1.0,1.0);
 
+uniform bool radial_cracks = false;
+
 //////////////////////////////////////////////////////////
 // GLASS
 //////////////////////////////////////////////////////////
@@ -642,8 +644,11 @@ void fragment() {
 	//////////////////////////////////////////////////////
 	// RADIAL CRACKS
 	//////////////////////////////////////////////////////
-
-	float radial =
+	
+	float crack_mask;
+	
+	if (radial_cracks == true) {
+		float radial =
 	abs(
 		sin(
 			atan(
@@ -663,12 +668,19 @@ void fragment() {
 		0.0,
 		impact_dist
 	);
-
-	float crack_mask =
+	
+	crack_mask =
 	radial
 	* radial_fade
 	* break_progress
 	* crack_density;
+	} else {
+		crack_mask =
+		break_progress
+	* crack_density;
+	}
+	
+	
 
 	//////////////////////////////////////////////////////
 	// COMBINE CRACKS

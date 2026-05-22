@@ -28,9 +28,12 @@ InputManager="*res://autoloads/input_manager.gd"
 DebugGlobal="*res://autoloads/debug_global.gd"
 Global="*res://autoloads/global.gd"
 Settings="*res://autoloads/settings/settings.gd"
+GlobalHelpers="*uid://dcegfthb00k45"
 
 [display]
 
+window/size/viewport_width=1600
+window/size/viewport_height=900
 window/stretch/mode="canvas_items"
 
 [file_customization]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://5q8tkkvow8nr"]
+
+[ext_resource type="Script" uid="uid://ddn08n1scqif1" path="res://core/world_generation/chunk.gd" id="1_uk8j2"]
+[ext_resource type="Script" uid="uid://ch50gpsiugc3v" path="res://core/world_generation/tile_map_mirrorer.gd" id="2_7nbxt"]
+[ext_resource type="TileSet" uid="uid://dhc7ysfeuo045" path="res://Assets/Tilesets/Platforms_Tileset.tres" id="2_i4vm3"]
+
+[node name="Chunk" type="Node2D" unique_id=2014685318]
+script = ExtResource("1_uk8j2")
+
+[node name="TileMapLayerHolder" type="Node2D" parent="." unique_id=1646754242]
+
+[node name="Foreground" type="TileMapLayer" parent="TileMapLayerHolder" unique_id=1923165433]
+
+[node name="Platforms" type="TileMapLayer" parent="TileMapLayerHolder" unique_id=312956296]
+tile_set = ExtResource("2_i4vm3")
+
+[node name="Background" type="TileMapLayer" parent="TileMapLayerHolder" unique_id=1590584174]
+
+[node name="TileMapLayerMirror" type="Node2D" parent="." unique_id=992769823 node_paths=PackedStringArray("source_tile_map_layers")]
+script = ExtResource("2_7nbxt")
+source_tile_map_layers = [NodePath("../TileMapLayerHolder/Foreground"), NodePath("../TileMapLayerHolder/Platforms"), NodePath("../TileMapLayerHolder/Background")]
+metadata/_custom_type_script = "uid://ch50gpsiugc3v"

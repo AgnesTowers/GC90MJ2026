@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c0ltln4yepnou"]
+
+[ext_resource type="Script" uid="uid://cxkwttcf1qeol" path="res://core/world_generation/chunk_features/chunk_feature.gd" id="1_d2guq"]
+
+[node name="GapSmall" type="Node2D" unique_id=681962505]
+script = ExtResource("1_d2guq")
+terrain_gap_boundary_size = Vector2i(3, 0)
+min_x_buffer_in_tiles = 3
+metadata/_custom_type_script = "uid://cxkwttcf1qeol"

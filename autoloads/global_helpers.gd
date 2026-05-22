@@ -16,3 +16,9 @@ func get_all_child_nodes(node: Node) -> Array[Node]:
 			nodes.append_array(get_all_child_nodes(child))
 	
 	return nodes
+
+func array_to_string(arr: Array[String], separator = ",") -> String:
+	var string: String = ""
+	for i: String in arr:
+		string += str(i) + separator
+	return string
