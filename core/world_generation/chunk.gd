@@ -3,6 +3,8 @@ extends Node2D
 class_name Chunk
 
 var chunk_number: int
+var chunk_size: Vector2i
+var ground_depth: int
 
 @onready var holder: Node2D = $TileMapLayerHolder
 @onready var mirror: TileMapLayerMirror = $TileMapLayerMirror
@@ -18,10 +20,8 @@ func _ready() -> void:
 func generate_base_terrain(heights: Array[int]) -> void:
 	
 	for x: int in range(heights.size()):
-		for y: int in range(heights[x] + 1):
+		for y: int in range(maxi(0, heights[x] - ground_depth), heights[x] + 1):
 			platforms_tile_map_layer.set_cell(Vector2i(x,-y), 0, Vector2i(1, 3))
-		
-	
 	platforms_tile_map_layer.update_internals()
 
 func mirror_tile_maps_layers() -> void:

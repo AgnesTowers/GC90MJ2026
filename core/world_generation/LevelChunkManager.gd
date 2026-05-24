@@ -13,8 +13,8 @@ class_name LevelChunkManager
 @export var mountain_size_in_chunks: Vector2i = Vector2i(16, 16)
 @export var initial_number_of_chunks: int = 16
 @export var chunk_size: Vector2i = Vector2i(32, 18)
+@export var ground_depth: int = 24
 @export_group("Tilesets")
-@export var tile_size: Vector2i = Vector2i(16, 16) 
 @export var foreground_tile_set: TileSet
 @export var platform_tile_set: TileSet
 @export var background_tile_set: TileSet
@@ -45,7 +45,11 @@ func generate_chunk(chunk_number: int) -> void:
 	new_chunk.owner = get_tree().edited_scene_root
 	
 	
-	new_chunk.position.x = chunk_number * chunk_size.x * tile_size.x
+	new_chunk.position.x = chunk_number * chunk_size.x * platform_tile_set.tile_size.x
+	
+	new_chunk.chunk_number = chunk_number
+	new_chunk.chunk_size = chunk_size
+	new_chunk.ground_depth = ground_depth
 	
 	new_chunk.foreground_tile_map_layer.tile_set = foreground_tile_set
 	new_chunk.platforms_tile_map_layer.tile_set = platform_tile_set
