@@ -147,63 +147,63 @@ metadata/_custom_type_script = "uid://yfsf065h2275"
 [node name="Chunk" type="Node2D" parent="LevelChunkManager" unique_id=2014685318 instance=ExtResource("12_nmsli")]
 script = ExtResource("8_aerfg")
 
-[node name="Chunk2" type="Node2D" parent="LevelChunkManager" unique_id=979022805 instance=ExtResource("12_nmsli")]
+[node name="Chunk2" type="Node2D" parent="LevelChunkManager" unique_id=1814940017 instance=ExtResource("12_nmsli")]
 position = Vector2(512, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk3" type="Node2D" parent="LevelChunkManager" unique_id=341904505 instance=ExtResource("12_nmsli")]
+[node name="Chunk3" type="Node2D" parent="LevelChunkManager" unique_id=253286823 instance=ExtResource("12_nmsli")]
 position = Vector2(1024, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk4" type="Node2D" parent="LevelChunkManager" unique_id=765237924 instance=ExtResource("12_nmsli")]
+[node name="Chunk4" type="Node2D" parent="LevelChunkManager" unique_id=1745771390 instance=ExtResource("12_nmsli")]
 position = Vector2(1536, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk5" type="Node2D" parent="LevelChunkManager" unique_id=1951435413 instance=ExtResource("12_nmsli")]
+[node name="Chunk5" type="Node2D" parent="LevelChunkManager" unique_id=1556349950 instance=ExtResource("12_nmsli")]
 position = Vector2(2048, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk6" type="Node2D" parent="LevelChunkManager" unique_id=254258500 instance=ExtResource("12_nmsli")]
+[node name="Chunk6" type="Node2D" parent="LevelChunkManager" unique_id=634440332 instance=ExtResource("12_nmsli")]
 position = Vector2(2560, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk7" type="Node2D" parent="LevelChunkManager" unique_id=1154718312 instance=ExtResource("12_nmsli")]
+[node name="Chunk7" type="Node2D" parent="LevelChunkManager" unique_id=1375326258 instance=ExtResource("12_nmsli")]
 position = Vector2(3072, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk8" type="Node2D" parent="LevelChunkManager" unique_id=124930959 instance=ExtResource("12_nmsli")]
+[node name="Chunk8" type="Node2D" parent="LevelChunkManager" unique_id=1743180887 instance=ExtResource("12_nmsli")]
 position = Vector2(3584, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk9" type="Node2D" parent="LevelChunkManager" unique_id=671248728 instance=ExtResource("12_nmsli")]
+[node name="Chunk9" type="Node2D" parent="LevelChunkManager" unique_id=398591543 instance=ExtResource("12_nmsli")]
 position = Vector2(4096, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk10" type="Node2D" parent="LevelChunkManager" unique_id=969729854 instance=ExtResource("12_nmsli")]
+[node name="Chunk10" type="Node2D" parent="LevelChunkManager" unique_id=446403906 instance=ExtResource("12_nmsli")]
 position = Vector2(4608, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk11" type="Node2D" parent="LevelChunkManager" unique_id=1800303134 instance=ExtResource("12_nmsli")]
+[node name="Chunk11" type="Node2D" parent="LevelChunkManager" unique_id=312830576 instance=ExtResource("12_nmsli")]
 position = Vector2(5120, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk12" type="Node2D" parent="LevelChunkManager" unique_id=1454320489 instance=ExtResource("12_nmsli")]
+[node name="Chunk12" type="Node2D" parent="LevelChunkManager" unique_id=802608826 instance=ExtResource("12_nmsli")]
 position = Vector2(5632, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk13" type="Node2D" parent="LevelChunkManager" unique_id=129816356 instance=ExtResource("12_nmsli")]
+[node name="Chunk13" type="Node2D" parent="LevelChunkManager" unique_id=1339582647 instance=ExtResource("12_nmsli")]
 position = Vector2(6144, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk14" type="Node2D" parent="LevelChunkManager" unique_id=611478392 instance=ExtResource("12_nmsli")]
+[node name="Chunk14" type="Node2D" parent="LevelChunkManager" unique_id=1368432452 instance=ExtResource("12_nmsli")]
 position = Vector2(6656, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk15" type="Node2D" parent="LevelChunkManager" unique_id=1770996802 instance=ExtResource("12_nmsli")]
+[node name="Chunk15" type="Node2D" parent="LevelChunkManager" unique_id=523104159 instance=ExtResource("12_nmsli")]
 position = Vector2(7168, 0)
 script = ExtResource("8_aerfg")
 
-[node name="Chunk16" type="Node2D" parent="LevelChunkManager" unique_id=2110962614 instance=ExtResource("12_nmsli")]
+[node name="Chunk16" type="Node2D" parent="LevelChunkManager" unique_id=838956562 instance=ExtResource("12_nmsli")]
 position = Vector2(7680, 0)
 script = ExtResource("8_aerfg")
 
