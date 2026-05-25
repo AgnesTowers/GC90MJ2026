@@ -4,7 +4,7 @@
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_w05js"]
 a = Vector2(-16, 0)
-b = Vector2(16, 1)
+b = Vector2(16, 0)
 
 [node name="DeathPlane" type="Area2D" unique_id=1395046958]
 collision_layer = 4
