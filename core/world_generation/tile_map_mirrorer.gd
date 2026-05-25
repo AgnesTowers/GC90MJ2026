@@ -17,9 +17,9 @@ func mirror_tile_map_layers() -> void:
 	for tile_map_layer in source_tile_map_layers:
 	
 		if tile_map_layer.tile_set != null:
-	
+			
 			var new_tile_map_layer = TileMapLayer.new()
-		
+			
 			new_tile_map_layer.tile_set = tile_map_layer.tile_set
 			new_tile_map_layer.tile_map_data = tile_map_layer.tile_map_data
 			new_tile_map_layer.scale.y = - tile_map_layer.scale.y
@@ -29,10 +29,6 @@ func mirror_tile_map_layers() -> void:
 			
 			add_child(new_tile_map_layer, true)
 			new_tile_map_layer.owner = get_tree().edited_scene_root
-			
-			tile_map_layer.changed.connect(func() -> void:
-				print(0)
-				)
 
 func free_tile_maps() -> void:
 	for child in get_children():

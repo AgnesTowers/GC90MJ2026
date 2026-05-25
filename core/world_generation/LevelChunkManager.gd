@@ -22,6 +22,9 @@ class_name LevelChunkManager
 @export var feature_palette: ChunkFeaturePalette
 @export var base_features_per_chunk: int = 0
 @export var feature_variance: int = 0
+@export_group("Mirror Setings")
+@export var apply_mirror: bool = true
+@export var mirror_offest: Vector2 = Vector2(0, 1.5)
 
 var level_chunks: Array[Chunk] = []
 
@@ -54,6 +57,7 @@ func generate_chunk(chunk_number: int) -> void:
 	new_chunk.foreground_tile_map_layer.tile_set = foreground_tile_set
 	new_chunk.platforms_tile_map_layer.tile_set = platform_tile_set
 	new_chunk.background_tile_map_layer.tile_set = background_tile_set
+	new_chunk.mirror.mirror_offest = mirror_offest
 	
 	var platform_heights: Array[int] = []
 	for x: int in range(chunk_size.x):
@@ -61,8 +65,10 @@ func generate_chunk(chunk_number: int) -> void:
 		var slope_fac: float = mountain_slope_curve.sample(offset)
 		var noise_fac: float = abs(slope_noise.get_noise_1d(offset * noise_sample_resolution))
 		platform_heights.append((slope_fac * mountain_size_in_chunks.y * chunk_size.y) + noise_fac * noise_power)
+	
 	new_chunk.generate_base_terrain(platform_heights)
 	
-	new_chunk.mirror_tile_maps_layers()
+	if apply_mirror:
+		new_chunk.mirror_tile_maps_layers()
 	
 	pass
